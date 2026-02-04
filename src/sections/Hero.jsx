@@ -17,8 +17,11 @@ const Hero = () => {
                 >
                     <div className="absolute inset-0 bg-blue-500 rounded-full blur-2xl opacity-20 animate-pulse"></div>
                     <img
-                        src="/assets/Onkar.JPG"
+                        src="/assets/Onkar_optimized.jpg"
                         alt="Onkar Dangi"
+                        loading="eager"
+                        fetchpriority="high"
+                        decoding="async"
                         className="relative w-full h-full object-cover rounded-full border-2 border-white/10 shadow-2xl"
                     />
                 </motion.div>
