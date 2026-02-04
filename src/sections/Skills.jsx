@@ -3,10 +3,45 @@ import { motion } from 'framer-motion';
 
 const Skills = () => {
     const skills = [
-        { category: "Frontend", items: ["React.js", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "jQuery", "Thymeleaf"] },
-        { category: "Backend", items: ["Java", "Spring Boot", "Node.js", "Python", "REST APIs", "Microservices"] },
-        { category: "Database & Cloud", items: ["SQL", "Amazon Web Services (AWS)", "S3", "MySQL", "PostgreSQL"] },
-        { category: "Tools & Others", items: ["Git", "Jenkins", "Machine Learning", "Agile", "Problem Solving"] } // Added Machine Learning from resume
+        {
+            category: "Languages",
+            items: ["Java", "JavaScript (ES6+)", "Python", "SQL", "C/C++"]
+        },
+        {
+            category: "Frontend",
+            items: ["React", "Next.js", "React Native", "HTML5", "CSS3", "Tailwind CSS"]
+        },
+        {
+            category: "Backend",
+            items: ["Spring Boot", "Node.js", "REST APIs", "Microservices", "gRPC", "GraphQL"]
+        },
+        {
+            category: "Databases",
+            items: ["PostgreSQL", "MySQL", "MongoDB", "Redis"]
+        },
+        {
+            category: "Cloud and DevOps",
+            items: ["AWS (S3, EC2)", "Azure", "Docker", "CI/CD"]
+        },
+        {
+            category: "Messaging and Systems",
+            items: ["Kafka", "ActiveMQ", "Distributed Systems", "System Design", "Concurrency"]
+        },
+        {
+            category: "Machine Learning",
+            items: [
+                "Python ML Stack",
+                "TensorFlow",
+                "Deep Learning",
+                "CNNs",
+                "Data Preprocessing",
+                "Model Evaluation"
+            ]
+        },
+        {
+            category: "Quality and Tools",
+            items: ["Git", "Testing (Unit and Integration)", "TDD", "Agile"]
+        }
     ];
 
     return (

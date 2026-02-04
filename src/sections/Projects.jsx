@@ -6,8 +6,9 @@ const Projects = () => {
         {
             title: "Patient Management Platform",
             date: "2026 - Present",
-            description: "Designing an enterprise-level hospital management microservices platform. Features secure patient records, billing, and analytics. Implementing REST, gRPC, and Kafka for inter-service communication with JWT auth and centralized error handling. Infrastructure managed via Docker and AWS IaC.",
+            description: "Enterprise hospital platform that manages patient records and coordinates billing and analytics across services. Built as a production-style microservices system with REST and gRPC APIs, Kafka events, and JWT-based auth. Deployed with Docker and AWS infrastructure as code, with testing and observability baked in.",
             tags: ["Microservices", "gRPC", "Kafka", "AWS", "Docker", "Java"],
+            link: "https://github.com/onkardangi/patient-management",
             classes: {
                 title: "text-teal-400",
                 gradient: "from-teal-600 to-teal-400",
@@ -18,8 +19,9 @@ const Projects = () => {
         {
             title: "C++ vs Java Memory Models",
             date: "Oct 2025 - Dec 2025",
-            description: "Comparative study of C++11 and Java Memory Models using litmus tests. Modeled concurrent behavior under weak memory semantics using CppMem and JCStress. Validated SC-DRF guarantees and analyzed execution patterns like Store Buffering and IRIW.",
+            description: "Research project comparing the C++11 memory model and Java Memory Model using litmus tests and real execution data. Implemented equivalent tests in CppMem and JCStress with VarHandles to validate release and acquire behavior. Documented where outcomes match, what is forbidden, and why weak-memory anomalies still appear.",
             tags: ["C++", "Java", "Concurrency", "CppMem", "Research"],
+            link: "/assets/C++ vs Java_ The Fence-Off report.pdf",
             classes: {
                 title: "text-blue-400",
                 gradient: "from-blue-600 to-blue-400",
@@ -30,7 +32,7 @@ const Projects = () => {
         {
             title: "TrackQ — Fitness Platform",
             date: "2025",
-            description: "End-to-end B2B2C wellness platform supporting 1K+ concurrent sessions. Features React Native dashboards, Node.js backend, and a thread-safe booking system. Integrated complex Stripe payment flows (refunds, splits) and ensured PCI compliance.",
+            description: "B2B2C wellness booking and payments platform for gyms and trainers, built end to end. Implemented a Node.js backend and React Native client with concurrency-safe booking flows supporting 1K+ concurrent sessions. Added Stripe payments including refunds, split payments, and subscriptions with accurate accounting across entities.",
             tags: ["Node.js", "React Native", "Stripe", "PostgreSQL", "Full Stack"],
             classes: {
                 title: "text-rose-400",
@@ -44,6 +46,7 @@ const Projects = () => {
             date: "Apr 2025 - May 2025",
             description: "Developed a binary classifier using MRI scans (OASIS-3 dataset) achieving 94.5% accuracy. Leveraged ResNet18 and custom CNNs, addressing class imbalance with synthetic data generation (diffusion models). Optimized with dropout and batch normalization.",
             tags: ["Python", "TensorFlow", "Deep Learning", "CNN", "Pandas"],
+            link: "/assets/Alzheimer detection report.pdf",
             classes: {
                 title: "text-purple-400",
                 gradient: "from-purple-600 to-purple-400",
@@ -54,7 +57,7 @@ const Projects = () => {
         {
             title: "Oceansweep",
             date: "Feb 2025 - May 2025",
-            description: "Full-stack ocean conservation platform using Next.js and Prisma. Enables pollution reporting, interactive event maps, and donation flows. Integrated Cloudinary for media and implemented real-time user engagement dashboards.",
+            description: "FWeb platform that turns ocean cleanup into an interactive product, not a static site. Built Next.js + Postgres + Prisma with event discovery, RSVP, comments, and donation flows plus user dashboards. Integrated Cloudinary for uploads and optimized the UX over three release cycles with seeded data and stakeholder demos.",
             tags: ["Next.js", "React", "PostgreSQL", "Prisma", "Stripe"],
             link: "https://github.com/onkardangi/OceanSweep",
             classes: {
@@ -78,7 +81,7 @@ const Projects = () => {
                 >
                     <h2 className="text-4xl font-bold text-white mb-4">Featured Projects</h2>
                     <div className="w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
-                    <p className="text-gray-400 mt-4">Research and development work in Systems, AI, and Web.</p>
+                    <p className="text-gray-400 mt-4">Backend and full stack projects focused on distributed systems, payments, and production-grade APIs.</p>
                 </motion.div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -103,7 +106,13 @@ const Projects = () => {
                                     </h3>
                                     {project.link && (
                                         <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg>
+                                            {project.link.endsWith('.pdf') ? (
+                                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                                </svg>
+                                            ) : (
+                                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg>
+                                            )}
                                         </a>
                                     )}
                                 </div>

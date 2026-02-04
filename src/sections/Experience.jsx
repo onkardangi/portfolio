@@ -27,7 +27,7 @@ const Experience = () => {
                         <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-[#030014]"></div>
                         <h3 className="text-xl font-bold text-white">Software Engineer</h3>
                         <span className="text-blue-400 font-medium text-sm block mb-2">Oct 2022 - Sep 2024 | Bectran, Inc.</span>
-                        <ul className="list-disc list-outside text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl ml-4 space-y-2">
+                        <ul className="list-disc list-outside text-gray-400 text-sm md:text-base leading-relaxed ml-4 space-y-2">
                             <li>Built backend services for enterprise fintech workflows (credit, payments, identity) using Java & Spring Boot.</li>
                             <li>Engineered 20+ scaling REST APIs handling bulk loads of 10K+ records, reducing latency by 30%.</li>
                             <li>Built a multi-entity payment system generating $1M+ in annual revenue and enabling 1000+ business units.</li>
@@ -45,9 +45,12 @@ const Experience = () => {
                         <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-[#030014]"></div>
                         <h3 className="text-xl font-bold text-white">Associate Software Engineer</h3>
                         <span className="text-blue-400 font-medium text-sm block mb-2">Mar 2022 - Oct 2022 | Bectran, Inc.</span>
-                        <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl">
-                            Contributed to core backend services and assisted in the migration of legacy systems to modern architecture.
-                        </p>
+                        <ul className="list-disc list-outside text-gray-400 text-sm md:text-base leading-relaxed ml-4 space-y-2">
+                            <li>Enabled Canadian payments via CyberSource gateway, integrating card and ACH processing for a new
+                                international client, expanding the platform’s cross-border payment capabilities.</li>
+                            <li>Integrated external identity verification into credit application pipelines, translating verification results into
+                                risk signals and automated approval or review states.</li>
+                        </ul>
                     </motion.div>
 
                     <motion.div
@@ -60,7 +63,7 @@ const Experience = () => {
                         <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-[#030014]"></div>
                         <h3 className="text-xl font-bold text-white">Software Engineer Intern</h3>
                         <span className="text-blue-400 font-medium text-sm block mb-2">Jun 2021 - Aug 2021 | CSC</span>
-                        <ul className="list-disc list-outside text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl ml-4 space-y-2">
+                        <ul className="list-disc list-outside text-gray-400 text-sm md:text-base leading-relaxed ml-4 space-y-2">
                             <li>Implemented full-stack enhancements to the Email Service (Spring Boot microservice & UI).</li>
                             <li>Enabled clients to send emails via multiple providers with delivery tracking and retry logic.</li>
                             <li>Worked across the full stack (Java, SQL, Thymeleaf, jQuery) to improve customer experience.</li>
@@ -77,7 +80,7 @@ const Experience = () => {
                         <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-[#030014]"></div>
                         <h3 className="text-xl font-bold text-white">Overseas Marketing Manager</h3>
                         <span className="text-blue-400 font-medium text-sm block mb-2">May 2021 - Aug 2021 | Tribal Art India</span>
-                        <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-2xl">
+                        <p className="text-gray-400 text-sm md:text-base leading-relaxed">
                             Expanded market for tribal paintings to overseas locations, supporting artist livelihoods and business development in North America.
                         </p>
                     </motion.div>

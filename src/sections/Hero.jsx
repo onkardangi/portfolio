@@ -13,7 +13,7 @@ const Hero = () => {
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
-                    className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-8"
+                    className="relative w-48 h-48 md:w-64 md:h-64 mx-auto mb-8"
                 >
                     <div className="absolute inset-0 bg-blue-500 rounded-full blur-2xl opacity-20 animate-pulse"></div>
                     <img

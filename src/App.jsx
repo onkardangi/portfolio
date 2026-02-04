@@ -5,6 +5,7 @@ import About from './sections/About';
 import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Skills from './sections/Skills';
+import Interests from './sections/Interests';
 import Contact from './sections/Contact';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Experience />
       <Projects />
       <Skills />
+      <Interests />
       <Contact />
     </Layout>
   );
