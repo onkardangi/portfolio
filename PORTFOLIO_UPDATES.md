@@ -12,7 +12,7 @@
 - [x] Add improved page metadata, social metadata, theme color, and a custom favicon.
 - [x] Add reduced-motion support and improve interactive education-card accessibility.
 - [x] Add and connect the final social-preview image.
-- [ ] Visually verify the completed page at desktop and mobile sizes.
+- [x] Visually verify the completed page at desktop and mobile sizes.
 - [ ] Decide whether to integrate, deploy separately, or remove the Hugging Face profile chatbot.
 - [ ] Populate `huggingface_space/profile/summary.txt` if the chatbot is retained.
 
@@ -29,4 +29,4 @@ Work through these in order so each change can be reviewed before the next one.
 7. [x] Rewrite experience bullets to foreground ownership, scale, business impact, and technical decisions.
 8. [x] Reorganize technical skills around the backend/platform roles being targeted.
 9. [x] Simplify the contact experience and clarify availability, preferred roles, and location.
-10. [ ] Align the portfolio, resume, LinkedIn, and pinned GitHub repositories around the same candidate story.
+10. [x] Align the portfolio, resume, LinkedIn, and pinned GitHub repositories around the same candidate story.

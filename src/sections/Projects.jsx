@@ -1,7 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Projects = () => {
+    const [expandedProject, setExpandedProject] = useState(null);
     const projects = [
         {
             title: "ClipJob",
@@ -29,21 +30,45 @@ const Projects = () => {
             }
         },
         {
+            title: "QueryMind",
+            featured: true,
+            date: "2026",
+            description: "Natural-language database explorer that turns plain-English questions into safe PostgreSQL queries, results, charts, and explanations.",
+            caseStudy: {
+                problem: "Non-technical users need answers from operational data but often depend on engineers to understand schemas and write one-off SQL.",
+                ownership: "Built the Kotlin/Spring Boot API, React client, authentication, database-connection workflow, schema introspection, Claude integration, visualizations, and automated tests.",
+                engineering: "Uses application-level SQL validation plus read-only database pools, relevance-scores schemas with 40+ tables to control context size, and encrypts stored credentials with AES-256-GCM.",
+                outcome: "Delivered an end-to-end PostgreSQL analytics workflow that generates SQL, executes approved read-only queries, and automatically selects useful chart visualizations."
+            },
+            architecture: ["React Client", "Spring Boot API", "Claude API", "PostgreSQL"],
+            proofLinks: [
+                { label: "Source code", href: "https://github.com/onkardangi/QueryMind" }
+            ],
+            tags: ["Kotlin", "Spring Boot", "React", "Claude API", "PostgreSQL", "Docker"],
+            link: "https://github.com/onkardangi/QueryMind",
+            classes: {
+                title: "text-indigo-400",
+                gradient: "from-indigo-600 to-violet-400",
+                border: "hover:border-indigo-500/30",
+                tag: "bg-indigo-500/10 text-indigo-400 border-indigo-500/10"
+            }
+        },
+        {
             title: "Patient Management Platform",
             featured: true,
             date: "2026 - Present",
-            description: "Enterprise hospital platform that manages patient records and coordinates billing and analytics across services. Built as a production-style microservices system with REST and gRPC APIs, Kafka events, and JWT-based auth. Deployed with Docker and AWS infrastructure as code, with testing and observability baked in.",
+            description: "Java microservices project that manages patient records, creates billing accounts over gRPC, and publishes patient events through Kafka.",
             caseStudy: {
-                problem: "Patient records, billing, authentication, and analytics require clear service boundaries without sacrificing consistency or operational visibility.",
-                ownership: "Built the platform as a production-style healthcare system spanning service APIs, asynchronous events, authentication, containerization, and infrastructure.",
-                engineering: "Combined REST and gRPC communication with Kafka-driven workflows, JWT authorization, automated testing, and observable Docker-based services deployed through AWS infrastructure as code.",
-                outcome: "Produced an end-to-end microservices reference platform that demonstrates secure service communication, event-driven processing, and repeatable cloud deployment."
+                problem: "Patient record changes must coordinate with downstream billing and event consumers without coupling every responsibility into one service.",
+                ownership: "Built the patient and billing services, REST endpoints, validation and error handling, persistence layer, gRPC contract and client, Kafka producer, tests, and container definitions.",
+                engineering: "Uses synchronous gRPC when patient creation requires an immediate billing account and Kafka events for asynchronous downstream processing.",
+                outcome: "Produced a working two-service foundation demonstrating REST CRUD, service-to-service gRPC, event publication, database persistence, and Docker packaging."
             },
-            architecture: ["REST Gateway", "gRPC Services", "Kafka Events", "AWS"],
+            architecture: ["REST API", "Patient Service", "gRPC Billing", "Kafka Events"],
             proofLinks: [
                 { label: "Source code", href: "https://github.com/onkardangi/patient-management" }
             ],
-            tags: ["Microservices", "gRPC", "Kafka", "AWS", "Docker", "Java"],
+            tags: ["Java", "Spring Boot", "REST", "gRPC", "Kafka", "Docker"],
             link: "https://github.com/onkardangi/patient-management",
             classes: {
                 title: "text-teal-400",
@@ -92,7 +117,6 @@ const Projects = () => {
         },
         {
             title: "TrackQ — Fitness Platform",
-            featured: true,
             date: "2025",
             description: "B2B2C wellness booking and payments platform for gyms and trainers, built end to end. Implemented a Node.js backend and React Native client with concurrency-safe booking flows supporting 1K+ concurrent sessions. Added Stripe payments including refunds, split payments, and subscriptions with accurate accounting across entities.",
             caseStudy: {
@@ -160,12 +184,12 @@ const Projects = () => {
                     {flagshipProjects.map((project, index) => (
                         <motion.div
                             key={project.title}
-                            whileHover={{ y: -10 }}
+                            whileHover={{ y: -6 }}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className={`glass rounded-xl overflow-hidden group cursor-pointer border border-white/5 transition-all ${project.classes.border}`}
+                            className={`glass rounded-xl overflow-hidden group border border-white/5 transition-all ${project.classes.border}`}
                         >
                             <div className={`h-2 bg-gradient-to-r ${project.classes.gradient}`}></div>
                             <div className="p-8 flex flex-col h-full">
@@ -177,27 +201,20 @@ const Projects = () => {
                                         {project.title}
                                     </h3>
                                     {project.link && (
-                                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                                        <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title}`} className="text-gray-400 hover:text-white transition-colors">
                                             {project.link.endsWith('.pdf') ? (
-                                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                                 </svg>
                                             ) : (
-                                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg>
+                                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg>
                                             )}
                                         </a>
                                     )}
                                 </div>
-                                <div className="grid gap-4 mb-6">
-                                    {Object.entries(project.caseStudy).map(([label, detail]) => (
-                                        <div key={label} className="border-l border-white/10 pl-4">
-                                            <span className={`${project.classes.title} text-[11px] font-bold tracking-wider uppercase block mb-1`}>
-                                                {label}
-                                            </span>
-                                            <p className="text-gray-400 text-sm leading-relaxed">{detail}</p>
-                                        </div>
-                                    ))}
-                                </div>
+                                <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                                    {project.description}
+                                </p>
                                 <div className="mb-6 rounded-xl bg-black/20 border border-white/5 p-4">
                                     <span className="text-gray-500 text-[11px] font-bold tracking-wider uppercase block mb-3">
                                         Architecture
@@ -245,6 +262,47 @@ const Projects = () => {
                                         ))}
                                     </div>
                                 )}
+                                <button
+                                    type="button"
+                                    onClick={() => setExpandedProject(expandedProject === project.title ? null : project.title)}
+                                    aria-expanded={expandedProject === project.title}
+                                    aria-controls={`case-study-${index}`}
+                                    className="mt-5 pt-5 border-t border-white/10 w-full flex items-center justify-between text-sm font-semibold text-gray-300 hover:text-white transition-colors"
+                                >
+                                    <span>{expandedProject === project.title ? 'Hide case study' : 'View case study'}</span>
+                                    <motion.svg
+                                        animate={{ rotate: expandedProject === project.title ? 180 : 0 }}
+                                        className="w-4 h-4"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        aria-hidden="true"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m6 9 6 6 6-6" />
+                                    </motion.svg>
+                                </button>
+                                <AnimatePresence initial={false}>
+                                    {expandedProject === project.title && (
+                                        <motion.div
+                                            id={`case-study-${index}`}
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: 'auto' }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            className="overflow-hidden"
+                                        >
+                                            <div className="grid gap-4 pt-5">
+                                                {Object.entries(project.caseStudy).map(([label, detail]) => (
+                                                    <div key={label} className="border-l border-white/10 pl-4">
+                                                        <span className={`${project.classes.title} text-[11px] font-bold tracking-wider uppercase block mb-1`}>
+                                                            {label}
+                                                        </span>
+                                                        <p className="text-gray-400 text-sm leading-relaxed">{detail}</p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
                             </div>
                         </motion.div>
                     ))}

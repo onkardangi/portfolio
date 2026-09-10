@@ -47,7 +47,7 @@ const Hero = () => {
 
                     <div className="flex flex-wrap justify-center gap-3 mb-12 text-sm text-gray-300">
                         <span className="glass rounded-full px-4 py-2">Enterprise fintech experience</span>
-                        <span className="glass rounded-full px-4 py-2">$1M+ annual revenue impact</span>
+                        <span className="glass rounded-full px-4 py-2">$1M+ monthly payment volume</span>
                         <span className="glass rounded-full px-4 py-2">MS in Computer Science · UIC</span>
                     </div>
 
