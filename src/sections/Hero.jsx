@@ -57,7 +57,7 @@ const Hero = () => {
                             download
                             className="px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-all shadow-lg shadow-blue-500/30 inline-flex items-center justify-center gap-2"
                         >
-                            Download Résumé
+                            Download Resume
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v12m0 0 4-4m-4 4-4-4M5 20h14" />
                             </svg>

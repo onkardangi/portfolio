@@ -4,43 +4,24 @@ import { motion } from 'framer-motion';
 const Skills = () => {
     const skills = [
         {
-            category: "Languages",
-            items: ["Java", "JavaScript (ES6+)", "Python", "SQL", "C/C++"]
+            category: "Backend and Distributed Systems",
+            items: ["Java", "Kotlin", "C#", "Scala", "Spring Boot", ".NET", "Akka", "Node.js", "REST APIs", "gRPC", "Microservices"]
         },
         {
-            category: "Frontend",
-            items: ["React", "Next.js", "React Native", "HTML5", "CSS3", "Tailwind CSS"]
+            category: "Data and Messaging",
+            items: ["PostgreSQL", "SQL", "Redis", "MongoDB", "Apache Kafka", "ActiveMQ", "Elasticsearch"]
         },
         {
-            category: "Backend",
-            items: ["Spring Boot", "Node.js", "REST APIs", "Microservices", "gRPC", "GraphQL"]
+            category: "Cloud and Platform",
+            items: ["AWS", "Azure Foundry", "Docker", "CI/CD", "System Design", "Concurrency", "Git", "Automated Testing"]
         },
         {
-            category: "Databases",
-            items: ["PostgreSQL", "MySQL", "MongoDB", "Redis"]
+            category: "Frontend and Product",
+            items: ["TypeScript", "JavaScript", "React", "Next.js", "React Native", "GraphQL", "Tailwind CSS"]
         },
         {
-            category: "Cloud and DevOps",
-            items: ["AWS (S3, EC2)", "Azure", "Docker", "CI/CD"]
-        },
-        {
-            category: "Messaging and Systems",
-            items: ["Kafka", "ActiveMQ", "Distributed Systems", "System Design", "Concurrency"]
-        },
-        {
-            category: "Machine Learning",
-            items: [
-                "Python ML Stack",
-                "TensorFlow",
-                "Deep Learning",
-                "CNNs",
-                "Data Preprocessing",
-                "Model Evaluation"
-            ]
-        },
-        {
-            category: "Quality and Tools",
-            items: ["Git", "Testing (Unit and Integration)", "TDD", "Agile"]
+            category: "AI and Agentic Systems",
+            items: ["Python", "Claude API", "RAG", "OpenAI Agents SDK", "LangGraph", "MCP", "TensorFlow"]
         }
     ];
 
@@ -57,8 +38,11 @@ const Skills = () => {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl font-bold text-white mb-4">Technical Skills</h2>
+                    <h2 className="text-4xl font-bold text-white mb-4">Core Engineering Skills</h2>
                     <div className="w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
+                    <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+                        Backend and platform engineering first, supported by full-stack product development and applied AI.
+                    </p>
                 </motion.div>
 
                 <div className="grid md:grid-cols-2 gap-8">

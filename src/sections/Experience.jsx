@@ -25,13 +25,14 @@ const Experience = () => {
                         className="relative pl-8 md:pl-12"
                     >
                         <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-[#030014]"></div>
-                        <h3 className="text-xl font-bold text-white">Software Engineer</h3>
-                        <span className="text-blue-400 font-medium text-sm block mb-2">Oct 2022 - Sep 2024 | Bectran, Inc.</span>
+                        <h3 className="text-xl font-bold text-white">Software Engineer II</h3>
+                        <span className="text-blue-400 font-medium text-sm block mb-2">Feb 2022 - Sep 2024 | Bectran, Inc.</span>
                         <ul className="list-disc list-outside text-gray-400 text-sm md:text-base leading-relaxed ml-4 space-y-2">
-                            <li>Built backend services for enterprise fintech workflows (credit, payments, identity) using Java & Spring Boot.</li>
-                            <li>Engineered 20+ scaling REST APIs handling bulk loads of 10K+ records, reducing latency by 30%.</li>
-                            <li>Built a multi-entity payment system generating $1M+ in annual revenue and enabling 1000+ business units.</li>
-                            <li>Refactored legacy apps to JDK 17 & AWS S3, cutting page transition times from 8 mins to &lt;1 sec.</li>
+                            <li>Reduced a database-heavy credit workflow from 8 minutes to 1 second—a 480× improvement—through Redis caching and query restructuring.</li>
+                            <li>Designed a multi-entity payment consolidation system processing more than $1M monthly with 99.9% uptime, including idempotency, partial-failure recovery, CyberSource, and ACH integrations.</li>
+                            <li>Built a CRM-facing REST API processing 100K credit applications monthly and reducing submission time by 37% while eliminating duplicate data entry.</li>
+                            <li>Re-architected synchronous ingestion into ActiveMQ-backed asynchronous bulk processing, increasing throughput to 1.5 million records monthly.</li>
+                            <li>Led the modernization of 40+ legacy services to JDK 17 and AWS S3, reducing infrastructure costs by 25% and improving cloud readiness.</li>
                         </ul>
                     </motion.div>
 
@@ -43,46 +44,12 @@ const Experience = () => {
                         className="relative pl-8 md:pl-12"
                     >
                         <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-[#030014]"></div>
-                        <h3 className="text-xl font-bold text-white">Associate Software Engineer</h3>
-                        <span className="text-blue-400 font-medium text-sm block mb-2">Mar 2022 - Oct 2022 | Bectran, Inc.</span>
-                        <ul className="list-disc list-outside text-gray-400 text-sm md:text-base leading-relaxed ml-4 space-y-2">
-                            <li>Enabled Canadian payments via CyberSource gateway, integrating card and ACH processing for a new
-                                international client, expanding the platform’s cross-border payment capabilities.</li>
-                            <li>Integrated external identity verification into credit application pipelines, translating verification results into
-                                risk signals and automated approval or review states.</li>
-                        </ul>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.6 }}
-                        viewport={{ once: true }}
-                        className="relative pl-8 md:pl-12"
-                    >
-                        <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-[#030014]"></div>
                         <h3 className="text-xl font-bold text-white">Software Engineer Intern</h3>
-                        <span className="text-blue-400 font-medium text-sm block mb-2">Jun 2021 - Aug 2021 | CSC</span>
+                        <span className="text-blue-400 font-medium text-sm block mb-2">Jun 2021 - Aug 2021 | Corporation Service Company</span>
                         <ul className="list-disc list-outside text-gray-400 text-sm md:text-base leading-relaxed ml-4 space-y-2">
-                            <li>Implemented full-stack enhancements to the Email Service (Spring Boot microservice & UI).</li>
-                            <li>Enabled clients to send emails via multiple providers with delivery tracking and retry logic.</li>
-                            <li>Worked across the full stack (Java, SQL, Thymeleaf, jQuery) to improve customer experience.</li>
+                            <li>Built full-stack features for an internal email platform, providing one integration point for multiple providers with delivery tracking and retry logic.</li>
+                            <li>Owned independent stories end to end across Java, Spring Boot, SQL, Thymeleaf, and jQuery.</li>
                         </ul>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.8 }}
-                        viewport={{ once: true }}
-                        className="relative pl-8 md:pl-12"
-                    >
-                        <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-[#030014]"></div>
-                        <h3 className="text-xl font-bold text-white">Overseas Marketing Manager</h3>
-                        <span className="text-blue-400 font-medium text-sm block mb-2">May 2021 - Aug 2021 | Tribal Art India</span>
-                        <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-                            Expanded market for tribal paintings to overseas locations, supporting artist livelihoods and business development in North America.
-                        </p>
                     </motion.div>
                 </div>
             </div>

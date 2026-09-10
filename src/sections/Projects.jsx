@@ -9,7 +9,7 @@ const Projects = () => {
             date: "2026 - Present",
             description: "macOS-first desktop utility that lets job seekers save, search, and paste reusable application answers from a keyboard-driven palette. Built with C# and Avalonia UI, with SQLite persistence, configurable global shortcuts, native macOS integration, clipboard restoration, and tested paste-back workflows.",
             caseStudy: {
-                problem: "Job applications repeatedly ask for the same detailed information, forcing candidates to search through résumés and old forms.",
+                problem: "Job applications repeatedly ask for the same detailed information, forcing candidates to search through resumes and old forms.",
                 ownership: "Designed and built the desktop product end to end, including its UI, local data model, native macOS integrations, tests, packaging, and release workflow.",
                 engineering: "Restores the previously focused application, performs a synthetic paste, then safely restores the user’s original clipboard while keeping platform behavior behind focused interfaces.",
                 outcome: "Shipped a self-contained Apple Silicon preview with SQLite persistence, configurable shortcuts, keyboard-first workflows, and automated coverage of core behavior."
