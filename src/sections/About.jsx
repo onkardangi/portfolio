@@ -8,6 +8,15 @@ const EducationCard = ({ date, degree, major, school, coursework, skills, activi
         <motion.div
             layout
             onClick={() => setIsOpen(!isOpen)}
+            onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    setIsOpen(!isOpen);
+                }
+            }}
+            role="button"
+            tabIndex={0}
+            aria-expanded={isOpen}
             className={`glass p-6 rounded-xl border-l-4 ${borderClass} ${bgClass} cursor-pointer group transition-all`}
         >
             <motion.div layout className="flex justify-between items-start">
@@ -112,7 +121,7 @@ const About = () => {
                                     At <strong>Bectran</strong>, I built and maintained backend systems that handled high-volume ingestion and complex, multi-entity payment flows. Much of my work lived below the surface. Making workflows resilient. Cleaning up data paths. Designing APIs that could recover safely instead of breaking loudly. The wins were not flashy, but they made the platform faster, safer, and easier for customers to trust.
                                 </p>
                                 <p>
-                                    I am currently pursuing my <strong>Master’s in Computer Science at UIC</strong>, where I enjoy going deep into distributed systems, memory models, and large-scale architecture. I like understanding not just how systems behave, but why they behave that way. I bring that perspective back into my projects, building systems that respect correctness, scale, and the realities of production environments.
+                                    I completed my <strong>Master’s in Computer Science at UIC</strong>, where I went deep into distributed systems, memory models, and large-scale architecture. I like understanding not just how systems behave, but why they behave that way. I bring that perspective into my projects, building systems that respect correctness, scale, and the realities of production environments.
                                 </p>
                                 <p>
                                     What motivates me is simple. I like building systems that hold up when they are stressed. Systems people can rely on without thinking about them. That is where I do my best work.

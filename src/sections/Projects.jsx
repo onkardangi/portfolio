@@ -4,6 +4,19 @@ import { motion } from 'framer-motion';
 const Projects = () => {
     const projects = [
         {
+            title: "ClipJob",
+            date: "2026 - Present",
+            description: "macOS-first desktop utility that lets job seekers save, search, and paste reusable application answers from a keyboard-driven palette. Built with C# and Avalonia UI, with SQLite persistence, configurable global shortcuts, native macOS integration, clipboard restoration, and tested paste-back workflows.",
+            tags: ["C#", ".NET 10", "Avalonia UI", "SQLite", "macOS", "xUnit"],
+            link: "https://github.com/onkardangi/ClipJob",
+            classes: {
+                title: "text-amber-400",
+                gradient: "from-amber-600 to-orange-400",
+                border: "hover:border-amber-500/30",
+                tag: "bg-amber-500/10 text-amber-400 border-amber-500/10"
+            }
+        },
+        {
             title: "Patient Management Platform",
             date: "2026 - Present",
             description: "Enterprise hospital platform that manages patient records and coordinates billing and analytics across services. Built as a production-style microservices system with REST and gRPC APIs, Kafka events, and JWT-based auth. Deployed with Docker and AWS infrastructure as code, with testing and observability baked in.",
@@ -14,6 +27,19 @@ const Projects = () => {
                 gradient: "from-teal-600 to-teal-400",
                 border: "hover:border-teal-500/30",
                 tag: "bg-teal-500/10 text-teal-400 border-teal-500/10"
+            }
+        },
+        {
+            title: "NetGameSim Akka Simulator",
+            date: "2026",
+            description: "Distributed graph simulator built on Akka Classic, modeling each graph node as an actor and enforcing message types across graph edges. Supports NetGameSim JSON inputs, configurable traffic distributions, repeatable experiments, metrics output, and pluggable Lai–Yang snapshot and tree leader-election algorithms.",
+            tags: ["Scala 3", "Akka", "Actor Model", "Distributed Systems", "SBT", "ScalaTest"],
+            link: "https://github.com/onkardangi/netgamesim-akka-sim",
+            classes: {
+                title: "text-cyan-400",
+                gradient: "from-cyan-600 to-blue-400",
+                border: "hover:border-cyan-500/30",
+                tag: "bg-cyan-500/10 text-cyan-400 border-cyan-500/10"
             }
         },
         {
@@ -57,7 +83,7 @@ const Projects = () => {
         {
             title: "Oceansweep",
             date: "Feb 2025 - May 2025",
-            description: "FWeb platform that turns ocean cleanup into an interactive product, not a static site. Built Next.js + Postgres + Prisma with event discovery, RSVP, comments, and donation flows plus user dashboards. Integrated Cloudinary for uploads and optimized the UX over three release cycles with seeded data and stakeholder demos.",
+            description: "Web platform that turns ocean cleanup into an interactive product, not a static site. Built Next.js + Postgres + Prisma with event discovery, RSVP, comments, and donation flows plus user dashboards. Integrated Cloudinary for uploads and optimized the UX over three release cycles with seeded data and stakeholder demos.",
             tags: ["Next.js", "React", "PostgreSQL", "Prisma", "Stripe"],
             link: "https://github.com/onkardangi/OceanSweep",
             classes: {

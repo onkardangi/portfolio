@@ -20,7 +20,7 @@ const Hero = () => {
                         src="/assets/Onkar_optimized.jpg"
                         alt="Onkar Dangi"
                         loading="eager"
-                        fetchpriority="high"
+                        fetchPriority="high"
                         decoding="async"
                         className="relative w-full h-full object-cover rounded-full border-2 border-white/10 shadow-2xl"
                     />
