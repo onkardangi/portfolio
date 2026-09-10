@@ -5,8 +5,15 @@ const Projects = () => {
     const projects = [
         {
             title: "ClipJob",
+            featured: true,
             date: "2026 - Present",
             description: "macOS-first desktop utility that lets job seekers save, search, and paste reusable application answers from a keyboard-driven palette. Built with C# and Avalonia UI, with SQLite persistence, configurable global shortcuts, native macOS integration, clipboard restoration, and tested paste-back workflows.",
+            caseStudy: {
+                problem: "Job applications repeatedly ask for the same detailed information, forcing candidates to search through résumés and old forms.",
+                ownership: "Designed and built the desktop product end to end, including its UI, local data model, native macOS integrations, tests, packaging, and release workflow.",
+                engineering: "Restores the previously focused application, performs a synthetic paste, then safely restores the user’s original clipboard while keeping platform behavior behind focused interfaces.",
+                outcome: "Shipped a self-contained Apple Silicon preview with SQLite persistence, configurable shortcuts, keyboard-first workflows, and automated coverage of core behavior."
+            },
             tags: ["C#", ".NET 10", "Avalonia UI", "SQLite", "macOS", "xUnit"],
             link: "https://github.com/onkardangi/ClipJob",
             classes: {
@@ -18,8 +25,15 @@ const Projects = () => {
         },
         {
             title: "Patient Management Platform",
+            featured: true,
             date: "2026 - Present",
             description: "Enterprise hospital platform that manages patient records and coordinates billing and analytics across services. Built as a production-style microservices system with REST and gRPC APIs, Kafka events, and JWT-based auth. Deployed with Docker and AWS infrastructure as code, with testing and observability baked in.",
+            caseStudy: {
+                problem: "Patient records, billing, authentication, and analytics require clear service boundaries without sacrificing consistency or operational visibility.",
+                ownership: "Built the platform as a production-style healthcare system spanning service APIs, asynchronous events, authentication, containerization, and infrastructure.",
+                engineering: "Combined REST and gRPC communication with Kafka-driven workflows, JWT authorization, automated testing, and observable Docker-based services deployed through AWS infrastructure as code.",
+                outcome: "Produced an end-to-end microservices reference platform that demonstrates secure service communication, event-driven processing, and repeatable cloud deployment."
+            },
             tags: ["Microservices", "gRPC", "Kafka", "AWS", "Docker", "Java"],
             link: "https://github.com/onkardangi/patient-management",
             classes: {
@@ -31,8 +45,15 @@ const Projects = () => {
         },
         {
             title: "NetGameSim Akka Simulator",
+            featured: true,
             date: "2026",
             description: "Distributed graph simulator built on Akka Classic, modeling each graph node as an actor and enforcing message types across graph edges. Supports NetGameSim JSON inputs, configurable traffic distributions, repeatable experiments, metrics output, and pluggable Lai–Yang snapshot and tree leader-election algorithms.",
+            caseStudy: {
+                problem: "Distributed algorithms are difficult to study when topology, message constraints, workloads, and experiment results are coupled to one implementation.",
+                ownership: "Designed the multi-project simulation architecture, graph-enrichment model, Akka runtime, algorithm interface, CLI, experiment profiles, metrics, and test suite.",
+                engineering: "Maps every graph node to an independent actor, enforces edge-level message rules, and runs pluggable Lai–Yang snapshot and tree leader-election algorithms over the same substrate.",
+                outcome: "Delivered reproducible file-driven and interactive simulations with seeded workloads, structured metrics, bundled experiment profiles, and automated algorithm and routing tests."
+            },
             tags: ["Scala 3", "Akka", "Actor Model", "Distributed Systems", "SBT", "ScalaTest"],
             link: "https://github.com/onkardangi/netgamesim-akka-sim",
             classes: {
@@ -57,8 +78,15 @@ const Projects = () => {
         },
         {
             title: "TrackQ — Fitness Platform",
+            featured: true,
             date: "2025",
             description: "B2B2C wellness booking and payments platform for gyms and trainers, built end to end. Implemented a Node.js backend and React Native client with concurrency-safe booking flows supporting 1K+ concurrent sessions. Added Stripe payments including refunds, split payments, and subscriptions with accurate accounting across entities.",
+            caseStudy: {
+                problem: "Gyms and trainers need one system to manage availability, prevent booking conflicts, and reconcile complex payments across multiple parties.",
+                ownership: "Built the Node.js backend and React Native client end to end, covering booking, user workflows, subscriptions, refunds, and multi-entity payment accounting.",
+                engineering: "Designed concurrency-safe reservation flows and Stripe payment paths for refunds, split payments, and subscriptions while preserving accurate ownership of funds.",
+                outcome: "Created a B2B2C platform designed to support more than 1,000 concurrent sessions without overselling limited booking inventory."
+            },
             tags: ["Node.js", "React Native", "Stripe", "PostgreSQL", "Full Stack"],
             classes: {
                 title: "text-rose-400",
@@ -94,6 +122,8 @@ const Projects = () => {
             }
         }
     ];
+    const flagshipProjects = projects.filter((project) => project.featured);
+    const additionalProjects = projects.filter((project) => !project.featured);
 
     return (
         <section id="projects" className="py-20 bg-[#0a0a0a]">
@@ -110,10 +140,10 @@ const Projects = () => {
                     <p className="text-gray-400 mt-4">Backend and full stack projects focused on distributed systems, payments, and production-grade APIs.</p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project, index) => (
+                <div className="grid md:grid-cols-2 gap-8">
+                    {flagshipProjects.map((project, index) => (
                         <motion.div
-                            key={index}
+                            key={project.title}
                             whileHover={{ y: -10 }}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -142,9 +172,16 @@ const Projects = () => {
                                         </a>
                                     )}
                                 </div>
-                                <p className="text-gray-400 text-sm mb-6 leading-relaxed line-clamp-4 hover:line-clamp-none transition-all">
-                                    {project.description}
-                                </p>
+                                <div className="grid gap-4 mb-6">
+                                    {Object.entries(project.caseStudy).map(([label, detail]) => (
+                                        <div key={label} className="border-l border-white/10 pl-4">
+                                            <span className={`${project.classes.title} text-[11px] font-bold tracking-wider uppercase block mb-1`}>
+                                                {label}
+                                            </span>
+                                            <p className="text-gray-400 text-sm leading-relaxed">{detail}</p>
+                                        </div>
+                                    ))}
+                                </div>
                                 <div className="flex flex-wrap gap-2 mt-auto">
                                     {project.tags.map((tag, idx) => (
                                         <span
@@ -158,6 +195,62 @@ const Projects = () => {
                             </div>
                         </motion.div>
                     ))}
+                </div>
+
+                <div className="mt-20">
+                    <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-8">
+                        <div>
+                            <span className="text-blue-400 text-sm font-semibold tracking-wider uppercase block mb-2">
+                                More projects
+                            </span>
+                            <h3 className="text-2xl md:text-3xl font-bold text-white">Additional Work</h3>
+                        </div>
+                        <p className="text-gray-500 text-sm">Research, machine learning, and full-stack work</p>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-6">
+                        {additionalProjects.map((project, index) => (
+                            <motion.article
+                                key={project.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.4, delay: index * 0.08 }}
+                                viewport={{ once: true }}
+                                className={`glass rounded-xl p-6 border border-white/5 transition-colors ${project.classes.border}`}
+                            >
+                                <span className={`${project.classes.title} text-xs font-bold tracking-wider uppercase block mb-2`}>
+                                    {project.date}
+                                </span>
+                                <h4 className="text-lg font-bold text-white mb-3">{project.title}</h4>
+                                <p className="text-gray-400 text-sm leading-relaxed mb-5 line-clamp-3">
+                                    {project.description}
+                                </p>
+                                <div className="flex flex-wrap gap-2 mb-5">
+                                    {project.tags.slice(0, 4).map((tag) => (
+                                        <span
+                                            key={tag}
+                                            className={`px-2.5 py-1 rounded-full text-xs font-medium border ${project.classes.tag}`}
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+                                {project.link && (
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 text-sm font-semibold text-gray-300 hover:text-white transition-colors"
+                                    >
+                                        {project.link.endsWith('.pdf') ? 'Read report' : 'View source'}
+                                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17 17 7m0 0H9m8 0v8" />
+                                        </svg>
+                                    </a>
+                                )}
+                            </motion.article>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
