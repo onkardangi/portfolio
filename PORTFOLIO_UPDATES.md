@@ -15,3 +15,18 @@
 - [ ] Visually verify the completed page at desktop and mobile sizes.
 - [ ] Decide whether to integrate, deploy separately, or remove the Hugging Face profile chatbot.
 - [ ] Populate `huggingface_space/profile/summary.txt` if the chatbot is retained.
+
+## Recruiter optimization checklist
+
+Work through these in order so each change can be reviewed before the next one.
+
+1. [x] Replace the generic hero message with clear backend positioning and immediate proof of experience, education, and business impact.
+2. [x] Consolidate the two résumé buttons into one primary résumé CTA, one projects CTA, and compact LinkedIn/GitHub links.
+3. [ ] Feature four flagship projects and move the remaining work into a secondary project collection.
+4. [ ] Turn each flagship project into an evidence-driven case study covering the problem, ownership, engineering decisions, and outcome.
+5. [ ] Add visual proof to flagship projects through screenshots, architecture diagrams, demos, releases, or experiment results.
+6. [ ] Condense “Who I am” into two or three recruiter-friendly paragraphs.
+7. [ ] Rewrite experience bullets to foreground ownership, scale, business impact, and technical decisions.
+8. [ ] Reorganize technical skills around the backend/platform roles being targeted.
+9. [ ] Simplify the contact experience and clarify availability, preferred roles, and location.
+10. [ ] Align the portfolio, résumé, LinkedIn, and pinned GitHub repositories around the same candidate story.
