@@ -109,22 +109,13 @@ const About = () => {
                         <div className="glass p-8 rounded-2xl border border-white/5">
                             <div className="space-y-4 text-gray-300 leading-relaxed text-left">
                                 <p>
-                                    I didn’t come into software chasing frameworks or titles. I came into it because I wanted to understand why systems break and how to make them reliable again.
+                                    I’m a backend-focused software engineer with experience building enterprise fintech and platform systems using Java, Spring Boot, SQL, messaging infrastructure, and AWS. At Bectran, I developed APIs, payment workflows, and high-volume data pipelines that improved performance, strengthened reliability, and supported meaningful business growth.
                                 </p>
                                 <p>
-                                    My first real exposure to true production scale came at CSC. For the first time, I could see how even a small change in code could ripple out to thousands of users. A performance tweak, a safer default, or a more defensive workflow was not just “cleaner code” but something that directly improved how real people experienced the platform.
+                                    I completed my <strong>Master’s in Computer Science at UIC</strong>, where I focused on distributed systems, concurrency, machine learning, and large-scale software architecture. My recent work includes a native macOS productivity application, an Akka-based distributed simulation framework, and a production-style healthcare microservices platform.
                                 </p>
                                 <p>
-                                    Working on enterprise systems showed me what software looks like outside of academic exercises. Reliability mattered. Backward compatibility mattered. Changes had consequences beyond a single feature or release. That experience made me curious about how large systems evolve over time and pulled me deeper into backend and platform work, where thoughtful engineering has outsized impact.
-                                </p>
-                                <p>
-                                    At <strong>Bectran</strong>, I built and maintained backend systems that handled high-volume ingestion and complex, multi-entity payment flows. Much of my work lived below the surface. Making workflows resilient. Cleaning up data paths. Designing APIs that could recover safely instead of breaking loudly. The wins were not flashy, but they made the platform faster, safer, and easier for customers to trust.
-                                </p>
-                                <p>
-                                    I completed my <strong>Master’s in Computer Science at UIC</strong>, where I went deep into distributed systems, memory models, and large-scale architecture. I like understanding not just how systems behave, but why they behave that way. I bring that perspective into my projects, building systems that respect correctness, scale, and the realities of production environments.
-                                </p>
-                                <p>
-                                    What motivates me is simple. I like building systems that hold up when they are stressed. Systems people can rely on without thinking about them. That is where I do my best work.
+                                    I’m interested in backend, platform, distributed-systems, and full-stack roles where reliability and thoughtful system design matter. I do my best work on systems that must remain correct under load and dependable enough that users never need to think about what is happening underneath.
                                 </p>
                             </div>
                         </div>

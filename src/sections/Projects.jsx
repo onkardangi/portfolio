@@ -14,6 +14,11 @@ const Projects = () => {
                 engineering: "Restores the previously focused application, performs a synthetic paste, then safely restores the user’s original clipboard while keeping platform behavior behind focused interfaces.",
                 outcome: "Shipped a self-contained Apple Silicon preview with SQLite persistence, configurable shortcuts, keyboard-first workflows, and automated coverage of core behavior."
             },
+            architecture: ["Global Shortcut", "Search Palette", "Paste Workflow", "SQLite"],
+            proofLinks: [
+                { label: "Source code", href: "https://github.com/onkardangi/ClipJob" },
+                { label: "Download preview", href: "https://github.com/onkardangi/ClipJob/releases" }
+            ],
             tags: ["C#", ".NET 10", "Avalonia UI", "SQLite", "macOS", "xUnit"],
             link: "https://github.com/onkardangi/ClipJob",
             classes: {
@@ -34,6 +39,10 @@ const Projects = () => {
                 engineering: "Combined REST and gRPC communication with Kafka-driven workflows, JWT authorization, automated testing, and observable Docker-based services deployed through AWS infrastructure as code.",
                 outcome: "Produced an end-to-end microservices reference platform that demonstrates secure service communication, event-driven processing, and repeatable cloud deployment."
             },
+            architecture: ["REST Gateway", "gRPC Services", "Kafka Events", "AWS"],
+            proofLinks: [
+                { label: "Source code", href: "https://github.com/onkardangi/patient-management" }
+            ],
             tags: ["Microservices", "gRPC", "Kafka", "AWS", "Docker", "Java"],
             link: "https://github.com/onkardangi/patient-management",
             classes: {
@@ -54,6 +63,11 @@ const Projects = () => {
                 engineering: "Maps every graph node to an independent actor, enforces edge-level message rules, and runs pluggable Lai–Yang snapshot and tree leader-election algorithms over the same substrate.",
                 outcome: "Delivered reproducible file-driven and interactive simulations with seeded workloads, structured metrics, bundled experiment profiles, and automated algorithm and routing tests."
             },
+            architecture: ["Graph JSON", "Actor Runtime", "Algorithms", "Metrics"],
+            proofLinks: [
+                { label: "Source code", href: "https://github.com/onkardangi/netgamesim-akka-sim" },
+                { label: "Watch demo", href: "https://youtu.be/-F2ZuVzfGS8" }
+            ],
             tags: ["Scala 3", "Akka", "Actor Model", "Distributed Systems", "SBT", "ScalaTest"],
             link: "https://github.com/onkardangi/netgamesim-akka-sim",
             classes: {
@@ -87,6 +101,8 @@ const Projects = () => {
                 engineering: "Designed concurrency-safe reservation flows and Stripe payment paths for refunds, split payments, and subscriptions while preserving accurate ownership of funds.",
                 outcome: "Created a B2B2C platform designed to support more than 1,000 concurrent sessions without overselling limited booking inventory."
             },
+            architecture: ["React Native", "Node.js API", "PostgreSQL", "Stripe"],
+            proofLinks: [],
             tags: ["Node.js", "React Native", "Stripe", "PostgreSQL", "Full Stack"],
             classes: {
                 title: "text-rose-400",
@@ -182,6 +198,25 @@ const Projects = () => {
                                         </div>
                                     ))}
                                 </div>
+                                <div className="mb-6 rounded-xl bg-black/20 border border-white/5 p-4">
+                                    <span className="text-gray-500 text-[11px] font-bold tracking-wider uppercase block mb-3">
+                                        Architecture
+                                    </span>
+                                    <div className="flex flex-wrap items-center gap-2" aria-label={`${project.title} architecture flow`}>
+                                        {project.architecture.map((step, stepIndex) => (
+                                            <React.Fragment key={step}>
+                                                <span className="px-3 py-1.5 rounded-md bg-white/5 border border-white/10 text-gray-300 text-xs font-medium">
+                                                    {step}
+                                                </span>
+                                                {stepIndex < project.architecture.length - 1 && (
+                                                    <svg className="w-3.5 h-3.5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m9 5 7 7-7 7" />
+                                                    </svg>
+                                                )}
+                                            </React.Fragment>
+                                        ))}
+                                    </div>
+                                </div>
                                 <div className="flex flex-wrap gap-2 mt-auto">
                                     {project.tags.map((tag, idx) => (
                                         <span
@@ -192,6 +227,24 @@ const Projects = () => {
                                         </span>
                                     ))}
                                 </div>
+                                {project.proofLinks.length > 0 && (
+                                    <div className="flex flex-wrap gap-3 mt-6 pt-5 border-t border-white/10">
+                                        {project.proofLinks.map((proof) => (
+                                            <a
+                                                key={proof.href}
+                                                href={proof.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className={`${project.classes.title} text-sm font-semibold inline-flex items-center gap-1.5 hover:text-white transition-colors`}
+                                            >
+                                                {proof.label}
+                                                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17 17 7M7 7h10v10" />
+                                                </svg>
+                                            </a>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </motion.div>
                     ))}
